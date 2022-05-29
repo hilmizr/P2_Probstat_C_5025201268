@@ -12,7 +12,7 @@ diminta melakukan aktivitas 𝐴. Setelah 15 menit, peneliti tersebut mencatat k
 kadar saturasi oksigen dari 9 responden tersebut. Berikut data dari 9 responden
 mengenai kadar saturasi oksigen sebelum dan sesudah melakukan aktivitas 𝐴
 
-![tabel](\ss\soal1\tabel.png)
+<img src="ss/soal1/tabel.png"> 
 
 Berdasarkan data pada tabel diatas, diketahui kadar saturasi oksigen dari
 responden ke-3 ketika belum melakukan aktivitas 𝐴 sebanyak 67, dan setelah
@@ -29,7 +29,7 @@ oxy$diff <- diff
 oxy
 sd(oxy$diff)
 ```
-![01](\ss\soal1\01.png)
+![01](ss/soal1/01.png)
 
 * b. Carilah nilai t (p-value)
 ``` R
@@ -60,7 +60,7 @@ stat.test <- oxy.long  %>%
   add_significance()
 stat.test
 ```
-![02](\ss\soal1\02.png)
+![02](ss/soal1/02.png)
 
 * c. Tentukanlah apakah terdapat pengaruh yang signifikan secara statistika dalam hal kadar saturasi oksigen, sebelum dan sesudah melakukan aktivitas 𝐴 jika diketahui tingkat signifikansi 𝛼 = 5% serta H0 : “tidak ada pengaruh yang signifikan secara statistika dalam hal kadar saturasi oksigen, sebelum dan sesudah melakukan aktivitas 𝐴”
 
@@ -94,7 +94,7 @@ install.packages("BSDA")
 library(BSDA)
 tsum.test(mean.x=23500, s.x=3900, n.x=100, mu=20000, alternative="greater")
 ```
-![01](\ss\soal2\01.png)
+![01](ss/soal2/01.png)
 
 * c. Buatlah kesimpulan berdasarkan P-Value yang dihasilkan!
 
@@ -109,13 +109,14 @@ Misal rata-rata lebih dari 20000 kita jadikan sebagai hipotesis alternatif, maka
 ## Soal 3
 Diketahui perusahaan memiliki seorang data analyst ingin memecahkan permasalahan pengambilan keputusan dalam perusahaan tersebut. Selanjutnya didapatkanlah data berikut dari perusahaan saham tersebut.
 
-![table](\ss\soal3\table.png)
+![table](ss/soal3/table.png)
 
 Dari data diatas berilah keputusan serta kesimpulan yang didapatkan dari hasil diatas. Asumsikan nilai variancenya sama, apakah ada perbedaan pada rata-ratanya (α= 0.05)? Buatlah :
 
 * a. H0 dan H1
 
 H0 = Tidak ada perbedaan pada rata-rata saham Bandung dan Bali
+
 H1 = Ada perbedaan pada rata-rata saham Bandung dan Bali
 
 * b. Hitung Sampel Statistik
@@ -124,7 +125,7 @@ H1 = Ada perbedaan pada rata-rata saham Bandung dan Bali
 library(BSDA)
 tsum.test(mean.x=3.64, s.x=1.67, n.x=19, mean.y=2.79, s.y=1.32, n.y=27, alternative="greater", mu = 0, var.equal = TRUE, conf.level=0.95)
 ```
-![01](\ss\soal3\01.png)
+![01](ss/soal3/01.png)
 
 * c. Lakukan Uji Statistik (df =2)
 
@@ -133,7 +134,7 @@ install.packages("mosaic")
 library(mosaic)
 plotDist(dist='t', df=2, col="black")
 ```
-![02](\ss\soal3\02.png)
+![02](ss/soal3/02.png)
 
 * d. Nilai Kritikal
 
@@ -142,7 +143,7 @@ Karena standar deviasi dua sampel diketahui, maka digunakan chi squared
 ``` R
 qchisq(.05, df=2, lower.tail=FALSE)   
 ```
-![03](\ss\soal3\03.png)
+![03](ss/soal3/03.png)
 
 * e. Keputusan
 
@@ -152,8 +153,7 @@ p-value yang dihasilkan adalah 0.03024. Karena p-value tersebut dibawah tingkat 
 
 Jadi, kesimpulannya, ada perbedaan pada rata-rata saham Bandung dan Bali. 
 
-
-
-
-
-
+## Referensi Soal 3
+- http://courses.atlas.illinois.edu/spring2017/STAT/STAT200/RProgramming/NormalChisqT.html
+- http://www.r-tutor.com/elementary-statistics/probability-distributions/chi-squared-distribution
+- https://rdrr.io/cran/BSDA/man/tsum.test.html
